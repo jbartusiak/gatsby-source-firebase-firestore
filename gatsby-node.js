@@ -3,7 +3,7 @@ const { initFirebase } = require('./firestore-db');
 let firestore;
 
 exports.onPreInit = (_, { credential }) => {
-    firestore = initFirebase(require(credential));
+    firestore = initFirebase(credential);
 }
 
 exports.sourceNodes = async (
