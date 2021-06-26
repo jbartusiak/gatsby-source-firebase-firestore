@@ -2,13 +2,13 @@ const { initFirebase } = require('./firestore-db');
 
 let firestore;
 
-exports.onPreInit = (_, { credential, types }) => {
-    firestore = initFirebase(credential);
+exports.onPreInit = (_, { credential }) => {
+    firestore = initFirebase(require(credential));
 }
 
 exports.pluginOptionsSchema = ({ Joi }) => {
     return Joi.object({
-        credential: Joi.object().required,
+        credential: Joi.string().required,
         types: Joi.object().required,
     })
 }
