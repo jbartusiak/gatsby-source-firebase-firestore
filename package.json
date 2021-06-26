@@ -1,8 +1,11 @@
 {
   "name": "@bartusiak/gatsby-source-firebase-firestore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "deploy": "yarn publish --access public"
+  },
   "dependencies": {
     "firebase-admin": "^9.9.0",
     "gatsby-cli": "^3.8.0"
