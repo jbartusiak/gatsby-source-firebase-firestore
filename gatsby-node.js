@@ -6,6 +6,13 @@ exports.onPreInit = (_, { credential }) => {
   firestore = initFirebase(credential);
 };
 
+exports.pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    credential: Joi.object(),
+    types: Joi.array(),
+  });
+};
+
 const createSourceNodes = async (actions, createContentDigest, types) => {
   const { createNode } = actions;
 
