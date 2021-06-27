@@ -1,6 +1,6 @@
 {
   "name": "@bartusiak/gatsby-source-firebase-firestore",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "firebase-admin": "^9.9.0",
-    "gatsby-cli": "^3.8.0"
+    "gatsby-cli": "^3.8.0",
+    "joi": "^17.4.0"
   },
   "devDependencies": {
     "husky": "^6.0.0",
