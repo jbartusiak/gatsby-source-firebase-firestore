@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     (...any other plugins you're using)
     {
-      resolve: 'gatsby-source-firebase-firestore',
+      resolve: '@bartusiak/gatsby-source-firebase-firestore',
       options: {
         credential,
         types,
