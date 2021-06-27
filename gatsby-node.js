@@ -6,12 +6,11 @@ exports.onPreInit = (_, { credential }) => {
   firestore = initFirebase(credential);
 };
 
-exports.pluginOptionsSchema = ({ Joi }) => {
-  return Joi.object({
-    credential: Joi.object(),
-    types: Joi.array(),
+exports.pluginOptionsSchema = ({ Joi }) =>
+  Joi.object({
+    credential: Joi.object().required(),
+    types: Joi.array().required(),
   });
-};
 
 const createSourceNodes = async (actions, createContentDigest, types) => {
   const { createNode } = actions;
@@ -34,11 +33,8 @@ const createSourceNodes = async (actions, createContentDigest, types) => {
     });
   });
 
-  return await Promise.all(promises);
+  return Promise.all(promises);
 };
 
-exports.sourceNodes = async ({ actions, createContentDigest }, { types }) => {
-  return await Promise.all([
-    createSourceNodes(actions, createContentDigest, types),
-  ]);
-};
+exports.sourceNodes = async ({ actions, createContentDigest }, { types }) =>
+  Promise.all([createSourceNodes(actions, createContentDigest, types)]);
